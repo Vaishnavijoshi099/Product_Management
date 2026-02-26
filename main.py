@@ -64,17 +64,34 @@ def add_product(product : Product, db : Session = Depends(get_db)):
     return product
 
 @app.put("/product/{id}")
-def update_product(id : int, product : Product):
-    for i in range(len(products)):
-        if products[i].id == id:
-            products[i] = product
-            return "Product updated successfully!!"
-    return "failed to update product!"
+def update_product(id : int, product : Product, db : Session = Depends(get_db)):
+    # for i in range(len(products)):
+    #     if products[i].id == id:
+    #         products[i] = product
+    #         return "Product updated successfully!!"
+    # return "failed to update product!"
+    db_product = db.query(database_models.Product).filter(database_models.Product.id == id).first()
+    if db_product:
+        db_product.name = product.name
+        db_product.description = product.description
+        db_product.price = product.price
+        db_product.quantity = product.quantity
+        db.commit()
+        return product
+    else:
+        return "Failed to update product details!!"
 
 @app.delete("/product/{id}")
-def delete_product(id : int):
-    for i in range(len(products)):
-        if products[i].id == id:
-            del products[i]
-            return "Product deleted successfully!!"
-    return "Product not found!!!"
+def delete_product(id : int, db : Session = Depends(get_db)):
+    db_product = db.query(database_models.Product).filter(database_models.Product.id == id).first()
+    if db_product:
+        db.delete(db_product)
+        db.commit()
+        return "Product deleted Successfully!!"
+    else:
+        return "Failed to delete product!!"
+    # for i in range(len(products)):
+    #     if products[i].id == id:
+    #         del products[i]
+    #         return "Product deleted successfully!!"
+    # return "Product not found!!!"
