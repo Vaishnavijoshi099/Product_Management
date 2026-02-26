@@ -1,0 +1,153 @@
+.container {
+  min-height: 100vh;
+  padding: 60px 80px;
+  background: linear-gradient(135deg, #f4f7fb, #e6eefc);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.addButton {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+}
+
+.addButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.6);
+}
+
+.tableWrapper {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: #f1f5f9;
+}
+
+.table th {
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  color: #475569;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  padding: 16px 14px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 14px;
+  color: #334155;
+}
+
+.table tbody tr {
+  transition: background 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.editButton {
+  background: #10b981;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.editButton:hover {
+  background: #059669;
+}
+
+.deleteButton {
+  background: #ef4444;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.deleteButton:hover {
+  background: #dc2626;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* Search Bar Wrapper (optional if you want spacing control) */
+.searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  margin: 16px 0 20px 0;
+
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  outline: none;
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Focus Effect */
+.searchInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Placeholder Styling */
+.searchInput::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .searchInput {
+    max-width: 100%;
+  }
+}
