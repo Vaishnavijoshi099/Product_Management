@@ -1,0 +1,17 @@
+# Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+myvenv/
+venv/
+env/
+
+# Environment config
+pyvenv.cfg
+
+# IDE files (optional)
+.vscode/
+.idea/
